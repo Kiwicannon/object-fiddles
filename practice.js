@@ -3,7 +3,11 @@
 
 //Create an object called me. Give it a key of name with the value being your name, and another key of age with the value being your age. Then alert your name using dot notation.
 
-  //Code here
+  var me = {
+    name: "Steven",
+    age: 24,
+    }
+    // alert(me.name);//Code here
 
 
 
@@ -14,17 +18,26 @@
 
 
 //Make a 'favoriteThings' object that contains the following keys: band, food, person, book, movie, holiday. Have the values to those keys be your favorite thing in that category.
-
+var favoriteThings = {
+  band:'YellowCard',
+  food:"Pizza",
+  person:"Kaylene",
+  book:"Eragon",
+  movie:"Pirates of the Caribbean",
+  holiday: "Christmas"
+}
   //Code here
 
 
 //After you've made your object, add another key named 'car' with the value being your favorite car and then another key named 'brand' with the value being your favorite brand.
-
+favoriteThings.car= "Lambo";
+favoriteThings.brand = "Vans";
   //Code here
 
 
 //Now change the value of the food key in your favoriteThings object to be 'Chicken Nuggets' and change the value of the book key in your favoriteThings object to be 'Harry Potter'.
-
+favoriteThings.food = "Chicken Nuggets"
+favoriteThings.book= "Harry Potter"
   //Code here
 
 
@@ -41,16 +54,22 @@ Set the value of that key to 'chapstick'.
 
 Using dot notation, add another key (or property) to your backPack object
 that is named color, with the value being the color of your backpack. */
+var backPack = {
 
+}
+var item = "firstPocket";
+backPack[item]= 'chapstick';
+backPack.color="Black"
   //Code here
 
 //After you do the above, alert your entire backPack object.
-
+// alert(backPack);
   //Code here
 
 /*You probably noticed that it just alerted [object Object].
 Alerting to see the data in your Object doesn't work so well.
 Instead, console.log your whole backPack object and then check out the console. */
+console.log(backPack);
 
   //Code here
 
@@ -63,11 +82,23 @@ Instead, console.log your whole backPack object and then check out the console. 
 
 
 //Create an 'alsoMe' object with the following properties name, age, height, gender, married, eyeColor, hairColor. Fill those properties in with the appropriate values.
-
+var alsoMe = {
+  name: "Steven Cannon",
+  age: 24,
+  height:"6ft",
+  gender: "Male",
+  married: "Not",
+  eyeColor:"Green",
+  hairColor: "Brown"
+}
   //Code Here
 
 //Now, loop through your object and alert every value. *Tyler --> 24 --> 6'0 --> Male, etc etc
 
+
+// for (var key in alsoMe) {
+//     alert(alsoMe[key]);
+// }
   //Code Here
 
 
@@ -79,14 +110,22 @@ Instead, console.log your whole backPack object and then check out the console. 
 
 
 //Create an Object called 'album' with 5 keys named different song titles that you make up, with the values being the length of each song.
-
+var album = {
+  hello: 5,
+  hi: 2,
+  peperoni: 8,
+  hats: 4,
+  people:6
+}
   //Code Here
 
 //Now, loop through your album object alerting every song title individually.
 
   //Code Here
 
-
+// for (var key in album) {
+//     alert(key);
+// }
 
 
 //NEXT PROBLEM
@@ -95,11 +134,21 @@ Instead, console.log your whole backPack object and then check out the console. 
 
 
 //Create an object called states that has 5 US states as properties with the values being their population (doesn't have to be accurate).
-
+var states = {
+  Utah:500,
+  California: 1000,
+  Idaho: 35000,
+  Iowa: 120000,
+  Arizona: 700000
+}
   //Code Here
 
 //Now, loop through your states object and if the states population is greater than 30K, alert that state.
-
+// for (var key in states){
+//   if(states[key]> 30000){
+//     alert(key)
+//   }
+// } 
   //Code Here
 
 
@@ -120,7 +169,18 @@ var user1 = {
 }
 /*Above you're given a user object. Loop through the user object checking to make sure
 that each value is truthy. If it's not truthy, remove it from the object. */
-
+for (var e in user1 ) {
+    //check to see if truthy or that it's 0, because 0 is a falsey value but I am going to assume that you'd want to change the age
+    //If this isn't the case just delete this part of the if-statement: "|| user[e] === 0"
+    if (user1[e] || use1[e] === 0) {
+      //If it's a truthy value, continue on with the code
+      continue;
+     }
+    else {
+    //else if not truthy, delete it from the object
+       delete user1[e];
+    }    
+}
   //Code Here
 
 //Once you get your truthy Object, Change the remaining values in the object to be specific to you (name: 'your name', username: 'your username'), rather than my information.
